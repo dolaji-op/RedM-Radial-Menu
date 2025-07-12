@@ -20,7 +20,7 @@ Config.controls = {
 }
 
 -- Visual Settings
-Config.zoomEffectEnabled = true
+Config.zoomEffectEnabled = false
 
 Config.lockIcon = {
     texture_dict = 'generic_textures',

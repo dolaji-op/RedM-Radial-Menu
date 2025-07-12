@@ -511,7 +511,7 @@ Citizen.CreateThread(function()
         local deltaTime = (currentTime - lastFrameTime) / 1000.0
         lastFrameTime = currentTime
 
-        if wheelOpen or fadeAlpha > 1 then
+        if wheelOpen or (Config.zoomEffectEnabled and fadeAlpha > 1) then
             if wheelOpen then
                 -- Disable all configured attack controls
                 for _, control in ipairs(Config.controls.disabledControls) do
