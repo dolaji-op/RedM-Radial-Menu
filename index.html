@@ -1,11 +1,11 @@
 <script>
     // Init screen resolution
     fetch('https://' + GetParentResourceName() + '/screenResolution', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
             width: screen.width,
             height: screen.height,
         })

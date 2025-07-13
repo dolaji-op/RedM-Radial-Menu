@@ -23,28 +23,7 @@ local WHEEL_SETTINGS = {
     labelOffset = 0.025   -- Label distance from icon
 }
 
--- DrawSprite	hud_quick_select	radial_slot_bg_8_4	0.5	0.26	0.125	0.142	180.0	0	0	0	200	false
--- DrawSprite	inventory_items_mp	clothing_generic_m_sweater	0.5	0.26	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_3	0.605	0.325	0.11	0.195	-90.0	219	2	2	200	false
--- DrawSprite	inventory_items_mp	generic_coach	0.605	0.325	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_2	0.639	0.501	0.078	0.217	0.0	0	0	0	200	false
--- DrawSprite	inventory_items_mp	kit_camp_wilderness	0.642	0.501	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_3	0.605	0.682	0.11	0.195	0.0	0	0	0	200	false
--- DrawSprite	multiwheel_emotes	emote_reaction_applause	0.605	0.682	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_4	0.506	0.751	0.125	0.142	0.0	0	0	0	200	false
--- DrawSprite	inventory_items_mp	weapon_kit_generic_animal_sample	0.506	0.751	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_5	0.405	0.689	0.112	0.195	0.0	0	0	0	200	false
--- DrawSprite	inventory_items_mp	mp_animal_snakediamondback	0.405	0.689	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_6	0.362	0.512	0.082	0.215	0.0	0	0	0	200	false
--- DrawSprite	mp_online_options	online_options_defensive	0.362	0.512	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_quick_select	radial_slot_bg_8_5	0.397	0.332	0.105	0.2	90.0	0	0	0	200	false
--- DrawSprite	inventory_items_mp	generic_camp_flag	0.397	0.332	0.04	0.07	0.0	255	255	255	255	false
--- DrawSprite	hud_radial_menu	radial_menu_center_bg	0.5	0.5	0.2	0.36	0.0	0	0	0	100	false
--- DrawSprite	inventory_items_mp	generic_coach	0.5	0.46	0.05	0.0875	0.0	255	255	255	255	false
-
-
-
--- center hover settings DrawSprite	mp_online_options	online_options_defensive	0.5	0.46	0.05	0.0875	0.0	255	255	255	255	false
+-- center hover settings
 local CenterHover_Settings = {
     texture_dict = "mp_online_options",
     texture_name = "online_options_defensive",
@@ -174,16 +153,14 @@ local function InitializeAnimations()
     end
 end
 
-local screenWidth = nil
-local screenHeight = nil
+local screenWidth = 1920
+local screenHeight = 1080
 local screenAspectRatio = 1.0
 RegisterNUICallback('screenResolution', function(params, cb)
     screenWidth = params.width
     screenHeight = params.height
-    print('Screen resolution', screenWidth, screenHeight)
     screenAspectRatio = (screenWidth / screenHeight)
     screenAspectRatio = math.floor(screenAspectRatio * 100) / 100
-    print(screenAspectRatio)
     cb(true)
 end)
 
@@ -599,6 +576,7 @@ Citizen.CreateThread(function()
                 wheelOpen = true
                 currentMenu = Config.mainMenu -- Reset to main menu
                 menuHistory = {} -- Clear navigation history
+                SetCursorLocation(0.5, 0.5)
                 PlaySoundFrontend("SELECT", "HUD_SHOP_SOUNDSET", true, 0)
             end
             wasHeld = true
@@ -611,9 +589,4 @@ Citizen.CreateThread(function()
         end
         Wait(0)
     end
-end)
-
-
--- Resource cleanup
-AddEventHandler('onResourceStop', function(resourceName)
 end)

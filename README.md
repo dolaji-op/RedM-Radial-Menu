@@ -1,6 +1,6 @@
-# RWHL - Red Dead Redemption 2 Radial Wheel Menu
+# ds-radialMenu - RedM Radial Wheel Menu
 
-A highly customizable and polished radial wheel menu system for RedM/FiveM, inspired by Red Dead Redemption 2's menu system. This resource provides a smooth, animated radial menu with support for submenus, item locking, sound effects, and extensive customization options.
+A highly customizable and polished radial wheel menu system for RedM, inspired by Red Dead Redemption 2's menu system. This resource provides a smooth, animated radial menu with support for submenus, item locking, sound effects, and extensive customization options.
 
 ## Features
 
