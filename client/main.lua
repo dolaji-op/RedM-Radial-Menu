@@ -286,7 +286,7 @@ local function GetHoveredItem()
     local dxCenter = normCursorX - centerX
     local dyCenter = normCursorY - centerY
     local centerDist = math.sqrt(dxCenter * dxCenter + dyCenter * dyCenter)
-    local centerThreshold = 0.045 -- tweak as needed for "center" detection
+    local centerThreshold = 0.080 -- tweak as needed for "center" detection
 
     if centerDist < centerThreshold then
         return 10
@@ -570,6 +570,7 @@ Citizen.CreateThread(function()
                             end
                         end
                     elseif hoveredIndex == 10 and #menuHistory > 0 then
+                        PlaySoundFrontend("SELECT", "HUD_SHOP_SOUNDSET", true, 0)
                         if not NavigateBack() then
                             wheelOpen = false
                         end

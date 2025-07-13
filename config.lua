@@ -109,7 +109,6 @@ Config.mainMenu = {
                 action = function()
                     print("Using horse brush")
                 end,
-                isDisabled = true,
             },
             {
                 label = "Horse Feed",
